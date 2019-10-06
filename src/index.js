@@ -62,13 +62,13 @@ function isGameOver() {
     }
     if (countX === 5) {
       alert("Player 1 wins!");
-      alert("Game is over, new game initializing...");
+      //alert("Game is over, new game initializing...");
       newGame();
       break;
     }
     if (countO === 5) {
       alert("Player 2 wins!");
-      alert("Game is over, new game initializing...");
+      //alert("Game is over, new game initializing...");
       newGame();
       break;
     } else {
@@ -109,5 +109,5 @@ function newGame() {
   countX = 0;
   countO = 0;
   //movesMade = 0;
-  playerTurn = parseInt(prompt("Are you player 1 or 2?", "Type 1 or 2"), 10);
+  //playerTurn = parseInt(prompt("Are you player 1 or 2?", "Type 1 or 2"), 10);
 }

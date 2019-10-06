@@ -4,8 +4,8 @@ body {
 table,
 td {
   table-layout: fixed;
-  width: 57px;
-  height: 57px;
+  width: 60px;
+  height: 60px;
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
