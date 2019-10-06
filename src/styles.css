@@ -1,0 +1,19 @@
+body {
+  font-family: Helvetica;
+}
+table,
+td {
+  table-layout: fixed;
+  width: 57px;
+  height: 57px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 30px;
+}
+.p1 {
+  background-color: rgb(124, 252, 0);
+}
+.p2 {
+  background-color: rgb(250, 128, 114);
+}
