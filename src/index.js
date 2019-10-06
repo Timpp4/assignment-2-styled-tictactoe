@@ -17,9 +17,11 @@ var possibleWins = [
 
 var countX = 0;
 var countO = 0;
+var seconds = 10;
 //var movesMade = 0;
 //var playerTurn = parseInt(prompt("Are you player 1 or 2?", "Type 1 or 2"), 10);
 var playerTurn = 1;
+var tid = setInterval(timer, 1000);
 
 function changeValue(tdID) {
   var square = document.getElementById(tdID).innerHTML;
@@ -34,6 +36,7 @@ function changeValue(tdID) {
       playerTurn++;
       //movesMade++;
       isGameOver();
+      resetTimer();
     } else {
       if (playerTurn === 2) {
         const att = document.createAttribute("class");
@@ -43,6 +46,7 @@ function changeValue(tdID) {
         playerTurn--;
         //movesMade++;
         isGameOver();
+        resetTimer();
       }
     }
   }
@@ -110,4 +114,30 @@ function newGame() {
   countO = 0;
   //movesMade = 0;
   //playerTurn = parseInt(prompt("Are you player 1 or 2?", "Type 1 or 2"), 10);
+}
+
+function resetTimer() {
+  abortTimer();
+  seconds = 10;
+  tid = setInterval(timer, 1000);
+}
+
+function timer() {
+  var element = document.getElementById("status");
+  element.innerHTML = "Player " + playerTurn + " has " + seconds + " seconds";
+  if (seconds < 1) {
+    //abortTimer();
+    if (playerTurn === 1) {
+      playerTurn++;
+      seconds = 10;
+    } else {
+      playerTurn--;
+      seconds = 10;
+    }
+  }
+  seconds--;
+}
+
+function abortTimer() {
+  clearInterval(tid);
 }
